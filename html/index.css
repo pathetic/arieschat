@@ -1,0 +1,612 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@700&display=swap');
+
+/* .color-0{color: #ffffff;}
+.color-1{color: #ff4444;}
+.color-2{color: #99cc00;}
+.color-3{color: #ffbb33;}
+.color-4{color: #0099cc;}
+.color-5{color: #33b5e5;}
+.color-6{color: #aa66cc;}
+.color-8{color: #cc0000;}
+.color-9{color: #cc0068;}
+.color-a{color: #50a2ff;}
+.color-b{color: #414141;}
+.color-c{color: #611539;}
+.color-d{color: #05a893;}
+.color-e{color: #FA4E4E;}
+.color-f{color: #FF8524;}
+.color-g{color: #6324FF;}
+.color-h{color: #00FF69;}
+.color-i{color: #976700;}
+.color-j{color: #f1e087;}
+.color-l{color: #002BFF}
+.color-m{color: #B1B1B1}
+.color-n{color: #e0e0e0}
+.color-o{color: #000000} */
+
+
+.color-v{
+  background:transparent url(https://cdn.raidforums.com/s/starfall.gif);
+  list-style:none;
+  font-family:arial;
+  letter-spacing:1.5px;
+  text-shadow:none;
+  animation:animate 1s infinite linear;
+}
+
+.color-x{
+  background:transparent url(https://cdn.raidforums.com/s/starfall.gif);
+  color: #861c28; text-shadow: 2px 2px 2px #5f2b8f;
+}
+
+.color-y{background:transparent url(https://cdn.raidforums.com/s/rain.gif);text-shadow:1px 1px 5px #000;color:#f90;text-decoration:overline;font-weight:900;white-space:nowrap}
+
+.color-w{
+  -webkit-animation: sponsor 5s infinite; 
+ 
+  -ms-animation: sponsor 5s infinite;
+ 
+  animation: sponsor 5s infinite; 
+}
+
+.color-a{color: #50a2ff;}
+.color-b{color: #414141;}
+.color-c{color: #611539;}
+.color-d{color: #05a893;}
+.color-e{color: #ff7c7c;}
+.color-f{color: #FF8524;}
+.color-g{color: #6324FF;}
+.color-h{color: #00FF69;}
+.color-i{color: #976700;}
+.color-j{color: #f1e087;}
+.color-k{color: #60EAFF;}
+.color-l{color: #002BFF;}
+.color-m{color: #B1B1B1;}
+.color-n{color: #cea51c;}
+.color-o{color: #000000;}
+
+.color-0{color: #ffffff;}
+.color-1{color: #F27F71;}
+.color-2{color: #99cc00;}
+.color-3{color: #ffbb33;}
+.color-4{color: #5e5e5e;}
+.color-5{color: #42e3ff;}
+.color-6{color: #aa66cc;}
+.color-8{color: #cc0000;}
+
+.color-9{
+  /* Chrome, Safari, Opera */
+ -webkit-animation: rainbow 10s infinite; 
+ 
+ /* Internet Explorer */
+ -ms-animation: rainbow 10s infinite;
+ 
+ /* Standar Syntax */
+ animation: rainbow 10s infinite; 
+}
+
+.color-9{
+  /* Chrome, Safari, Opera */
+ -webkit-animation: rainbow 10s infinite; 
+ 
+ /* Internet Explorer */
+ -ms-animation: rainbow 10s infinite;
+ 
+ /* Standar Syntax */
+ animation: rainbow 10s infinite; 
+}
+
+.color-p{
+  background:transparent url(https://cdn.raidforums.com/s/starfall.gif);
+
+  -webkit-animation: ice 5s infinite; 
+  
+  -ms-animation: ice 5s infinite;
+ 
+  animation: ice 5s infinite; 
+ }
+ 
+ 
+ 
+ @-webkit-keyframes ice{
+   from{color: rgba(0,0,0,1);}
+   25%{color: rgb(60, 255, 0);}
+   50%{color: rgb(255, 0, 179);}
+   75%{color: rgb(255,255,255);}
+   to{color: rgba(0,0,0,1);}
+ }
+ 
+ /* Internet Explorer */
+ @-ms-keyframes ice{
+  from{color: rgba(0,0,0,1);}
+  25%{color: rgb(60, 255, 0);}
+  50%{color: rgb(255, 0, 179);}
+  75%{color: rgb(255,255,255);}
+  to{color: rgba(0,0,0,1);}
+ }
+ 
+ /* Standar Syntax */
+ @keyframes ice{
+  from{color: rgba(0,0,0,1);}
+  25%{color: rgb(60, 255, 0);}
+  50%{color: rgb(255, 0, 179);}
+  75%{color: rgb(255,255,255);}
+  to{color: rgba(0,0,0,1);}
+ }
+
+ .color-o{
+  background:transparent url(https://static.nulled.to/public/assets/sparkling.gif);
+
+  -webkit-animation: nume 5s infinite; 
+  
+  -ms-animation: gobi 5s infinite;
+ 
+  animation: gobi 5s infinite; 
+  
+ }
+ @-webkit-keyframes gobi{
+   from{color: rgb(255, 0, 0);}
+   25%{color: rgb(255, 255, 255);}
+   50%{color: rgb(255, 98, 98);}
+   75%{color: rgba(255, 0, 0, 0.568);}
+   to{color: rgba(0,0,0,1);}
+ }
+ 
+ /* Internet Explorer */
+  @-webkit-keyframes gobi{
+    from{color: rgb(255, 0, 0);}
+    25%{color: rgb(255, 255, 255);}
+    50%{color: rgb(255, 98, 98);}
+    75%{color: rgba(255, 0, 0, 0.568);}
+    to{color: rgba(0,0,0,1);}
+ }
+ 
+ /* Standar Syntax */
+  @-webkit-keyframes gobi{
+    from{color: rgb(255, 0, 0);}
+    25%{color: rgb(255, 255, 255);}
+    50%{color: rgb(255, 98, 98);}
+    75%{color: rgba(255, 0, 0, 0.568);}
+    to{color: rgba(0,0,0,1);}
+ }
+
+.color-z{
+  background:transparent url(https://static.nulled.to/public/assets/sparkling.gif);
+
+  -webkit-animation: nume 5s infinite; 
+  
+  -ms-animation: nume 5s infinite;
+ 
+  animation: nume 5s infinite; 
+  
+ }
+ 
+ 
+ 
+ @-webkit-keyframes nume{
+   from{color: rgba(0,0,0,1);}
+   25%{color: rgb(0, 255, 76);}
+   50%{color: rgb(255, 98, 98);}
+   75%{color: rgb(17, 0, 255);}
+   to{color: rgba(0,0,0,1);}
+ }
+ 
+ /* Internet Explorer */
+ @-ms-keyframes nume{
+  from{color: rgba(0,0,0,1);}
+  25%{color: rgb(0, 255, 76);}
+  50%{color: rgb(255, 98, 98);}
+  75%{color: rgb(17, 0, 255);}
+  to{color: rgba(0,0,0,1);}
+ }
+ 
+ /* Standar Syntax */
+ @keyframes nume{
+  from{color: rgba(0,0,0,1);}
+  25%{color: rgb(0, 255, 76);}
+  50%{color: rgb(255, 98, 98);}
+  75%{color: rgb(17, 0, 255);}
+  to{color: rgba(0,0,0,1);}
+ }
+
+.color-s{
+  background:transparent url(https://static.nulled.to/public/assets/sparkling.gif);
+
+ -webkit-animation: akewon 5s infinite; 
+ 
+ -ms-animation: akewon 5s infinite;
+
+ animation: akewon 5s infinite; 
+ 
+}
+
+
+
+@-webkit-keyframes akewon{
+  from{color: rgba(0,0,0,1);}
+  25%{color: rgb(0, 162, 255);}
+  50%{color: rgb(0, 47, 255);}
+  75%{color: rgb(255,255,255);}
+  to{color: rgba(0,0,0,1);}
+}
+
+/* Internet Explorer */
+@-ms-keyframes akewon{
+  from{color: rgba(0,0,0,1);}
+  25%{color: rgb(0, 162, 255);}
+  50%{color: rgb(0, 47, 255);}
+  75%{color: rgb(255,255,255);}
+  to{color: rgba(0,0,0,1);}
+}
+
+/* Standar Syntax */
+@keyframes akewon{
+  from{color: rgba(0,0,0,1);}
+  25%{color: rgb(0, 162, 255);}
+  50%{color: rgb(0, 47, 255);}
+  75%{color: rgb(255,255,255);}
+  to{color: rgba(0,0,0,1);}
+}
+
+
+@-webkit-keyframes sponsor{
+  from{color: rgb(255, 187, 51);}
+  25%{color: rgb(255, 235, 51);}
+  50%{color: rgb(255, 187, 51);}
+  75%{color: rgb(255, 235, 51);}
+  to{color: rgba(255, 187, 51,1);}
+}
+
+/* Internet Explorer */
+@-ms-keyframes sponsor{
+  from{color: rgb(255, 187, 51);}
+  25%{color: rgb(255, 235, 51);}
+  50%{color: rgb(255, 187, 51);}
+  75%{color: rgb(255, 235, 51);}
+  to{color: rgba(255, 187, 51,1);}
+}
+
+/* Standar Syntax */
+@keyframes sponsor{
+  from{color: rgb(255, 187, 51);}
+  25%{color: rgb(255, 235, 51);}
+  50%{color: rgb(255, 187, 51);}
+  75%{color: rgb(255, 235, 51);}
+  to{color: rgba(255, 187, 51,1);}
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes rainbow{
+  0%{color: red;}
+  10%{color: orange;}
+  20%{color: rgb(86, 255, 218);}
+  30%{color: yellow;}
+  40%{color: rgba(0, 255, 0, 0.733);}
+  50%{color: rgb(0, 140, 255);}
+  60%{color: rgb(234, 0, 255);}
+  70%{color: rgb(200, 255, 0);}
+  80%{color: rgba(0, 255, 242, 0.829);}
+  90%{color: rgb(119, 255, 85);}
+  100%{color: rgb(255, 0, 140);}
+}
+
+/* Internet Explorer */
+@-ms-keyframes rainbow{
+  0%{color: red;}
+  10%{color: orange;}
+  20%{color: rgb(86, 255, 218);}
+  30%{color: yellow;}
+  40%{color: rgba(0, 255, 0, 0.733);}
+  50%{color: rgb(0, 140, 255);}
+  60%{color: rgb(234, 0, 255);}
+  70%{color: rgb(200, 255, 0);}
+  80%{color: rgba(0, 255, 242, 0.829);}
+  90%{color: rgb(119, 255, 85);}
+  100%{color: rgb(255, 0, 140);}
+}
+
+/* Standar Syntax */
+@keyframes rainbow{
+  0%{color: red;}
+  10%{color: orange;}
+  20%{color: rgb(86, 255, 218);}
+  30%{color: yellow;}
+  40%{color: rgba(0, 255, 0, 0.733);}
+  50%{color: rgb(0, 140, 255);}
+  60%{color: rgb(234, 0, 255);}
+  70%{color: rgb(200, 255, 0);}
+  80%{color: rgba(0, 255, 242, 0.829);}
+  90%{color: rgb(119, 255, 85);}
+  100%{color: rgb(255, 0, 140);}
+}
+
+
+
+
+/* arabic 
+@font-face {
+  font-family: 'Almarai';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Almarai Bold'), local('Almarai-Bold'), url(https://fonts.gstatic.com/s/almarai/v4/tssoApxBaigK_hnnS-agtnqWo572.woff2) format('woff2');
+  unicode-range: U+0600-06FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE80-FEFC;
+}
+*/
+
+* {
+  font-family: 'Tajawal', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.no-grow {
+  flex-grow: 0;
+}
+
+em {
+  font-style: normal;
+}
+
+
+#app {
+  font-family: 'Tajawal', sans-serif;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+color: white;
+}
+
+.chat-window {
+  position: absolute;
+  top: 1.5%; 
+  left: 0.8%;
+  width: 38%;
+  height: 22%;
+  max-width: 1000px;
+  background-color: rgba(0, 0, 0, 0.411);
+  -webkit-animation-duration: 2s;
+}
+
+/* .header {
+  position: absolute;
+  width: 25.0%;
+  left: 0.8%;
+  top: 24.5%;
+} */
+/*
+.tablink {
+  background-color: rgba(255, 255, 255, 0.349);
+  color: rgb(44, 44, 44);
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 12px 1px;
+  font-size: 13px; 
+  width: 20%;
+  
+  
+}
+*/
+
+
+.tablink:hover {
+  color: aliceblue;
+  background-color: rgba(0, 0, 0, 0.432);
+}
+
+#emoji {
+  position: absolute;
+  font-size: 2.1vh;
+  right: 1%;
+}
+
+.chat-messages {
+  position: relative;
+  height: 125%;
+
+  font-size: 14px;
+  text-shadow: 0px 0px black;
+  overflow-x: hidden;
+  overflow-y: hidden; 
+  word-break: break-all;
+}
+
+.force-overflow
+{
+	min-height: 450px;
+}
+
+#wrapper
+{
+	text-align: center;
+	margin: auto;
+}
+
+#style-1::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
+	border-radius: 10px;
+	background-color: #f5f5f500;
+}
+
+#style-1::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #f5f5f500;
+}
+
+#style-1::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
+	background-color: rgba(255, 255, 255, 0.349);
+}
+
+#panelEmoji::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
+	border-radius: 10px;
+	background-color: #f5f5f500;
+}
+
+#panelEmoji::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #f5f5f500;
+}
+
+#panelEmoji::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
+	background-color: rgba(255, 255, 255, 0.349);
+}
+
+
+.chat-input {
+  font-size: 1.2vh;
+  position: absolute;
+  top: 29%;
+  left: 2.5%;
+  width: 38%;
+  max-width: 1000px;
+  box-sizing: border-box;
+  border-radius: 1vw;
+  max-width: 476px;
+}
+
+.prefix {
+  font-size: 1.8vh;
+  position: absolute;
+  margin-top: 0.5%;
+  left: 0.208%;
+}
+
+textarea {
+  color: white;
+  font-size: 1.30vh;
+  display: block;
+  box-sizing: border-box;
+  padding: 1%;
+  padding-left: 3.5%;
+  background: transparent;
+  background-color: rgba(0, 0, 0, 0.411);
+  border-radius: 20px;
+  width: 100%;
+  border-width: 0;
+  height: 3.15%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+textarea:focus, input:focus {
+    outline: none;
+}
+
+.msg {
+  animation: pulse;
+  animation-duration: 0.4s;
+  display: table;
+  margin: 3px;
+  background: rgba(0, 0, 0, 0.411);
+  border-radius: 25px;
+  padding: 2px;
+  padding-left: 40px;
+  padding-right: 40px;
+  color: #fff;
+  font-family: 'Tajawal', sans-serif;
+  position:relative;
+}
+
+.multiline {
+  margin-left: 4%;
+  text-indent: -1.2rem;
+  white-space: pre-line;
+}
+.msgcntr
+{
+    right: 3px;
+    padding: 1px;
+    position: relative;
+    font-size: 13px !important;
+    color: white;
+
+}
+
+.suggestions {
+  list-style-type: none;
+  padding: 0.5%;
+  padding-left: 1.4%;
+  font-size: 1.65vh;
+  box-sizing: border-box;
+  color: re;
+  border-radius: 15px;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+}
+
+.help {
+  color: #b0bbbd;
+}
+
+.disabled {
+  color: #b0bbbd;
+}
+
+.suggestion {
+  margin-bottom: 0.5%;
+}
+
+.hidden {
+  animation: bounce;
+  animation-duration: 2s;
+
+  display: none;
+}
+
+.iconChat {
+  width: 0.9vw;
+}
+
+.iconChatIRS {
+  width: 2.5vw;
+}
+
+@keyframes animate{
+  0%{
+    color:#484848;
+    text-shadow:none;
+  }
+  18%{
+    color:#484848;
+    text-shadow:none;
+  }
+  20%{
+    color:#f90;
+    text-shadow:0 0 7px #f90,0 0 20px #ff6c00;
+  }
+  30%{
+    color:#484848;
+    text-shadow:none;
+  }
+  35%{
+    color:#f90;
+    text-shadow:0 0 7px #f90,0 0 20px #ff6c00;
+  }
+  70%{
+    color:#484848;
+    text-shadow:none;
+  }
+  85%{
+    color:#f90;
+    text-shadow:0 0 7px #f90,0 0 20px #ff6c00;
+  }
+  90%{
+    color:#484848;
+    text-shadow:none;
+  }
+  100%{
+    color:#484848;
+    text-shadow:none;
+  }
+}

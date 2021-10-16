@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link href="vendor/fonts/Yekan-Bakh-EN-04-Regular.css" rel="stylesheet">
+  <link href="vendor/flexboxgrid.6.3.1.min.css" rel="stylesheet"></link>
+  <link href="vendor/animate.3.5.2.min.css" rel="stylesheet"></link>
+  <link href="index.css" rel="stylesheet"></link>
+  <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+  <script src="vendor/vue.2.3.3.min.js" type="text/javascript"></script>
+  <script src="config.default.js" type="text/javascript"></script>
+  <script src="config.js" type="text/javascript"></script>
+</head>
+<body>
+  <div id="app"></div>
+
+
+<!--  -->
+  <!-- App Template -->
+  <script type="text/x-template" id="app_template">
+    <div id="app" :class="{ 'fadeOutLeft animated': !showWindow, 'hidden': shouldHide }">
+		<div class="header">
+			<button class="tablink borderBotLeft" onclick="openPage('Global', this, event)" value="global" id="defaultOpen"></button>
+		<!--	<button class="tablink" onclick="openPage('Medic', this, event)" value="medic"><i class="fa fa-user"></i> الادارة</button> 
+			<button class="tablink" onclick="openPage('Police', this, event)" value="police"><i class="fa fa-shield"></i> الأمن العام</button>
+			<button class="tablink" onclick="openPage('Medic', this, event)" value="medic"><i class="fa fa-ambulance"></i> الصـحة</button>
+			<button class="tablink borderBotRight" onclick="openPage('Gang', this, event)" value="gang"><i class="fa fa-user"></i> العصابات</button> -->
+		  </div>
+		<div id="Global" class="tabcontent" >
+		  <div class="chat-window" :style="this.style">
+			<div class="chat-messages" ref="messages" id="style-1">
+			  <message v-for="msg in messages"
+					   :templates="templates"
+					   :multiline="msg.multiline"
+					   :args="msg.args"
+					   :color="msg.color"
+					   :template="msg.template"
+					   :template-id="msg.templateId"
+					   :key="msg">
+			  </message>
+			</div>
+		  </div>
+		</div>
+		
+		<div id="Police" class="tabcontent">
+		  <div class="chat-window" :style="this.style" :class="{ 'fadeOutRight animated': !showWindow, 'hidden': shouldHide }">
+			<div class="chat-messages" ref="messagesP">
+			  <message v-for="msg in messagesP"
+					   :templates="templates"
+					   :multiline="msg.multiline"
+					   :args="msg.args"
+					   :color="msg.color"
+					   :template="msg.template"
+					   :template-id="msg.templateId"
+					   :key="msg">
+			  </message>
+			</div>
+		  </div>
+		</div>
+		
+		
+		<div id="Medic" class="tabcontent">
+		  <div class="chat-window" :style="this.style" :class="{ 'fadeOutRight animated': !showWindow, 'hidden': shouldHide }">
+			<div class="chat-messages" ref="messagesM">
+			  <message v-for="msg in messagesM"
+					   :templates="templates"
+					   :multiline="msg.multiline"
+					   :args="msg.args"
+					   :color="msg.color"
+					   :template="msg.template"
+					   :template-id="msg.templateId"
+					   :key="msg">
+			  </message>
+			</div>
+		  </div>
+		</div>
+
+		<div id="admin" class="tabcontent">
+		  <div class="chat-window" :style="this.style" :class="{ 'fadeOutRight animated': !showWindow, 'hidden': shouldHide }">
+			<div class="chat-messages" ref="messagesM">
+			  <message v-for="msg in messagesM"
+					   :templates="templates"
+					   :multiline="msg.multiline"
+					   :args="msg.args"
+					   :color="msg.color"
+					   :template="msg.template"
+					   :template-id="msg.templateId"
+					   :key="msg">
+			  </message>
+			</div>
+		  </div>
+		</div>
+		
+		<div id="Gang" class="tabcontent">
+		  <div class="chat-window" :style="this.style" :class="{ 'fadeOutRight animated': !showWindow, 'hidden': shouldHide }">
+			<div class="chat-messages" ref="messagesG">
+			  <message v-for="msg in messagesG"
+					   :templates="templates"
+					   :multiline="msg.multiline"
+					   :args="msg.args"
+					   :color="msg.color"
+					   :template="msg.template"
+					   :template-id="msg.templateId"
+					   :key="msg">
+			  </message>
+			</div>
+		  </div>
+		</div>
+      <div class="chat-input" v-show="showInput">
+        <div>
+			<div id="emoji" >🙂</div>
+      <div id="panelEmoji" style="overflow-y: scroll; position: absolute; right: -5px; top: 43px; z-index: 999; display: none; width: 24.6vw; height: 160px; padding: 5px 2px 5px 5px; margin-bottom: 5px; background: rgba(0, 0, 0, 0.493); border: 1 solid rgb(223, 223, 223); border-radius: 1vw; box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 1px;">
+        
+			<ul style="padding: 0px; margin: 0px; list-style: none;">
+        <a class="emojiPanel" type="img" value=":1:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/686270467056992314.png?v=1" width="25px"></img></a>
+        <a class="emojiPanel" type="img" value=":2:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/619977221951586320.png?v=1" width="25px"></img></a>
+        <a class="emojiPanel" type="img" value=":3:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/619493231599681547.png?v=1" width="25px"></img></a>
+        <a class="emojiPanel" type="img" value=":4:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/619975400377942036.png?v=1" width="25px"></img></a>
+        <a class="emojiPanel" type="img" value=":5:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/619977214330535965.png?v=1" width="25px"></img></a>
+        <a class="emojiPanel" type="img" value=":6:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/691581782570565633.png?v=1" width="25px"></img></a>
+        <a class="emojiPanel" type="img" value=":7:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/653684058592641036.gif?v=1" width="25px"></img></a>
+        <a class="emojiPanel" type="img" value=":8:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/650045493442772992.gif?v=1" width="25px"></img></a>
+        <a class="emojiPanel" type="img" value=":9:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/696398099391840309.gif?v=1" width="25px"></img></a>
+        <a class="emojiPanel" type="img" value=":10:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/711235867053654027.gif?v=1" width="25px"></img></a>
+        <a class="emojiPanel" type="img" value=":11:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/650045492885061679.gif?v=1" width="25px"></img></a>
+        <a class="emojiPanel" type="img" value=":12:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/650050802408488978.gif?v=1" width="25px"></img></a>
+        <a class="emojiPanel" type="img" value=":13:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/653875017251160064.gif?v=1" width="25px"></img></a>
+        <a class="emojiPanel" type="img" value=":14:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/650052291973349376.gif?v=1" width="25px"></img></a>
+        <a class="emojiPanel" type="img" value=":15:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/650045493052702742.gif?v=1" width="25px"></img></a>
+        <a class="emojiPanel" type="img" value=":16:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/629691136449052682.gif?v=1" width="25px"></img></a>
+        <a class="emojiPanel" type="img" value=":17:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/676463639292674059.gif?v=1" width="25px"></img></a>
+        <a class="emojiPanel" type="img" value=":18:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/664144634565492736.png?v=1" width="25px"></img></a>
+        <a class="emojiPanel" type="img" value=":19:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/629556806712295435.gif?v=1" width="25px"></img></a>
+        <a class="emojiPanel" type="img" value=":20:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/650050800311074874.gif?v=1" width="25px"></img></a>
+        <a class="emojiPanel" type="img" value=":21:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/651090673709350912.gif?v=1" width="25px"></img></a>
+        <a class="emojiPanel" type="img" value=":22:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/629580308731133952.gif?v=1" width="25px"></img></a>
+        <a class="emojiPanel" type="img" value=":23:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/629576649599352853.gif?v=1" width="25px"></img></a>
+        <a class="emojiPanel" type="img" value=":24:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/674791079001849856.gif?v=1" width="25px"></img></a>
+        <a class="emojiPanel" type="img" value=":25:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/594437522260492318.gif?v=1" width="25px"></img></a>
+        <a class="emojiPanel" type="img" value=":26:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/582891162709524500.gif?v=1" width="25px"></img></a>
+        <a class="emojiPanel" type="img" value=":27:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/607041444863279137.gif?v=1" width="25px"></img></a>
+        <a class="emojiPanel" type="img" value=":28:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/624235140713021460.gif?v=1" width="25px"></img></a>
+        <a class="emojiPanel" type="img" value=":29:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/696378056876752937.png?v=1" width="25px"></img></a>
+        <a class="emojiPanel" type="img" value=":30:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/685505214530453516.gif?v=1" width="25px"></img></a>
+        <a class="emojiPanel" type="img" value=":31:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/718004381169090580.gif?v=1" width="25px"></img></a>
+        <a class="emojiPanel" type="img" value=":32:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/696408548808327228.gif?v=1" width="25px"></img></a>
+        <a class="emojiPanel" type="img" value=":33:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/683383446328049717.gif?v=1" width="25px"></img></a>
+        <a class="emojiPanel" type="img" value=":34:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/513389703312048132.gif?v=1" width="25px"></img></a>
+        <a class="emojiPanel" type="img" value=":35:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/696378344111079466.png?v=1" width="25px"></img></a>
+        <a class="emojiPanel" type="img" value=":36:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/664100817908793374.png?v=1" width="25px"></img></a>
+        <a class="emojiPanel" type="img" value=":37:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/664100817527111691.png?v=1" width="25px"></img></a>
+        <a class="emojiPanel" type="img" value=":38:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/664834737554194432.gif?v=1" width="25px"></img></a>
+        <a class="emojiPanel" type="img" value=":39:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/664834737398874142.gif?v=1" width="25px"></img></a>
+        <a class="emojiPanel" type="img" value=":40:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/671397384139440138.png?v=1" width="25px"></img></a>
+        <a class="emojiPanel" type="img" value=":41:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/683383669578268673.gif?v=1" width="25px"></img></a>
+        <a class="emojiPanel" type="img" value=":42:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/727467721889021993.png?v=1" width="25px"></img></a>
+        <a class="emojiPanel" type="img" value=":43:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/727467722144743500.png?v=1" width="25px"></img></a>
+        <a class="emojiPanel" type="img" value=":44:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/727467721339699211.png?v=1" width="25px"></img></a>
+        <a class="emojiPanel" type="img" value=":45:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/727467722102800445.png?v=1" width="25px"></img></a>
+        <a class="emojiPanel" type="img" value=":46:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/727467722014982144.png?v=1" width="25px"></img></a>
+        <a class="emojiPanel" type="img" value=":47:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/727467721977233439.png?v=1" width="25px"></img></a>
+        <a class="emojiPanel" type="img" value=":48:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/727468616399847434.png?v=1" width="25px"></img></a>
+        <a class="emojiPanel" type="img" value=":49:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/727467776872153129.png?v=1" width="25px"></img></a>
+        <a class="emojiPanel" type="img" value=":50:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/727467776742260758.png?v=1" width="25px"></img></a>
+        <a class="emojiPanel" type="img" value=":51:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/727468616198389852.png?v=1" width="25px"></img></a>
+        <a class="emojiPanel" type="img" value=":52:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/727467848460402699.png?v=1" width="25px"></img></a>
+        <a class="emojiPanel" type="img" value=":53:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/770927255802740737.gif?v=1" width="25px"></img></a>
+        <a class="emojiPanel" type="img" value=":54:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/722405768443330611.png?v=1" width="25px"></img></a>
+        <a class="emojiPanel" type="img" value=":55:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/829091523715006484.png?v=1" width="25px"></img></a>
+		<a class="emojiPanel" type="img" value=":57:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/829237085197697055.png?v=1" width="25px"></img></a>
+		<a class="emojiPanel" type="img" value=":58:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/823263095664541747.gif?v=1" width="25px"></img></a>
+		<a class="emojiPanel" type="img" value=":59:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/821079184096755774.gif?v=1" width="25px"></img></a>
+		<a class="emojiPanel" type="img" value=":60:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/722395644412559450.gif?v=1" width="25px"></img></a>
+		<a class="emojiPanel" type="img" value=":61:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/813845952602308680.gif?v=1" width="25px"></img></a>
+		<a class="emojiPanel" type="img" value=":62:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/782793674525638677.gif?v=1" width="25px"></img></a>
+		<a class="emojiPanel" type="img" value=":63:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/750423666247991407.gif?v=1" width="25px"></img></a>
+		<a class="emojiPanel" type="img" value=":64:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/827134081997078588.gif?v=1" width="25px"></img></a>
+		<a class="emojiPanel" type="img" value=":65:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/684532211281690760.png?v=1" width="25px"></img></a>
+		<a class="emojiPanel" type="img" value=":66:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/715033331980304394.gif?v=1" width="25px"></img></a>
+		<a class="emojiPanel" type="img" value=":67:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/824773257776463912.gif?v=1" width="25px"></img></a>
+		<a class="emojiPanel" type="img" value=":68:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/721904228620304521.png?v=1" width="25px"></img></a>
+		<a class="emojiPanel" type="img" value=":69:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/824416826028982312.gif?v=1" width="25px"></img></a>
+		<a class="emojiPanel" type="img" value=":70:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/699572558231633961.gif?v=1" width="25px"></img></a>
+		<a class="emojiPanel" type="img" value=":71:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/826518088891629618.png?v=1" width="25px"></img></a>
+		<a class="emojiPanel" type="img" value=":72:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/852114115144450058.png?v=1" width="25px"></img></a>
+		<a class="emojiPanel" type="img" value=":73:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/851381831227146280.png?v=1" width="25px"></img></a>
+		<a class="emojiPanel" type="img" value=":74:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/824497314496118811.png?v=1" width="25px"></img></a>
+		<a class="emojiPanel" type="img" value=":76:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/851652102169690112.gif?v=1" width="25px"></img></a>
+		<a class="emojiPanel" type="img" value=":77:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/851599660857950208.png?v=1" width="25px"></img></a>
+		<a class="emojiPanel" type="img" value=":78:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/856607020958351360.gif?v=1" width="25px"></img></a>
+		<a class="emojiPanel" type="img" value=":79:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/856607020190531584.gif?v=1" width="25px"></img></a>
+		<a class="emojiPanel" type="img" value=":80:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/856607024732831795.gif?v=1" width="25px"></img></a>
+		<a class="emojiPanel" type="img" value=":81:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/856607020723077170.gif?v=1" width="25px"></img></a>
+		<a class="emojiPanel" type="img" value=":82:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/825150281686712360.png?v=1" width="25px"></img></a>
+		<a class="emojiPanel" type="img" value=":83:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/865692136014872616.png?v=1" width="25px"></img></a>
+		<a class="emojiPanel" type="img" value=":84:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/836388017693917184.gif?v=1" width="25px"></img></a>
+		<a class="emojiPanel" type="img" value=":85:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/836387292930768926.gif?v=1" width="25px"></img></a>
+		<a class="emojiPanel" type="img" value=":86:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/824417456327884861.png?v=1" width="25px"></img></a>
+		<a class="emojiPanel" type="img" value=":87:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/825150295712989195.gif?v=1" width="25px"></img></a>
+		<a class="emojiPanel" type="img" value=":88:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/825150294642917398.gif?v=1" width="25px"></img></a>
+		<a class="emojiPanel" type="img" value=":89:" style="text-decoration: none; margin: 4px; position: initial; font-size: 24px;"><img class="iconPanel" src="https://cdn.discordapp.com/emojis/825150287278637106.png?v=1" width="25px"></img></a>
+
+		</ul></div>
+          <span class="prefix"></span>
+          <textarea id="inputText" v-model="message" placeholder=""
+                    ref="input"
+                    type="text"
+                    autofocus
+                    spellcheck="false"
+                    @keyup.esc="hideInput"
+                    @keyup="keyUp"
+                    @keydown="keyDown"
+                    @keypress.enter.prevent="send">
+          </textarea>
+        </div>
+        <suggestions :message="message" :suggestions="suggestions">
+        </suggestions>
+      </div>
+    </div>
+  </script>
+
+  <!-- Message Template -->
+  <script type="text/x-template" id="message_template">
+    <div class="msg" :class="{ multiline }">
+      <span v-html="textEscaped"></span>
+    </div>
+  </script>
+
+  <!-- Suggestions Template -->
+  <script type="text/x-template" id="suggestions_template">
+    <div class="suggestions-wrap" v-show="currentSuggestions.length > 0">
+      <ul class="suggestions">
+        <li class="suggestion" v-for="s in currentSuggestions">
+          <p>
+            <span :class="{ 'disabled': s.disabled }">
+              {{s.name}}
+            </span>
+            <span class="param"
+                  v-for="(p, index) in s.params"
+                  :class="{ 'disabled': p.disabled }">
+              [{{p.name}}]
+            </span>
+          </p>
+          <small class="help">
+            <template v-if="!s.disabled">
+              {{s.help}}
+            </template>
+            <template v-for="p in s.params" v-if="!p.disabled">
+              {{p.help}}
+            </template>
+          </small>
+        </li>
+      </ul>
+    </div>
+  </script>
+
+  <!-- Scripts -->
+  <script type="text/javascript" src="./Suggestions.js"></script>
+  <script type="text/javascript" src="./Message.js"></script>
+  <script type="text/javascript" src="./App.js"></script>
+
+  <!-- Main Entry -->
+  <script type="text/javascript">
+  window.post = (url, data) => {
+    var request = new XMLHttpRequest();
+    request.open('POST', url, true);
+    request.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+    request.send(data);
+  }
+
+  /*const instance = new Vue({
+    el: '#app',
+    render: h => h(APP),
+  });*/
+  
+
+  window.emulate = (type, detail = {}) => {
+    detail.type = type;
+    window.dispatchEvent(new CustomEvent('message', {
+      detail,
+    }));
+  };
+  </script>
+
+</body>
+</html>
